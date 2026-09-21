@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">입금알림 전달</string>
+    <string name="noti_service_label">입금 알림 접근</string>
+</resources>

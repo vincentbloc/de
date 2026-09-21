@@ -1,0 +1,16 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+    <!-- 배경 -->
+    <path android:fillColor="#3B82F6" android:pathData="M0,0 h108 v108 h-108 z" />
+    <!-- 지폐 -->
+    <path android:fillColor="#FFFFFF" android:pathData="M22,42 h64 v24 h-64 z" />
+    <!-- 동전 테두리 -->
+    <path android:fillColor="#3B82F6"
+        android:pathData="M45,54 a9,9 0 1,0 18,0 a9,9 0 1,0 -18,0 z" />
+    <!-- 아래 화살표(입금) -->
+    <path android:fillColor="#FFFFFF"
+        android:pathData="M50,72 h8 v10 h6 l-10,10 l-10,-10 h6 z" />
+</vector>
