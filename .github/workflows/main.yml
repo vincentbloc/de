@@ -1,0 +1,37 @@
+name: Build APK
+
+# 이 저장소(android 폴더)를 GitHub에 올리면 자동으로 APK가 빌드됩니다.
+# 빌드가 끝나면 Actions 실행 결과 하단의 "Artifacts"에서 APK를 내려받으세요.
+
+on:
+  push:
+    branches: [ "**" ]
+  workflow_dispatch:   # Actions 탭에서 수동 실행도 가능
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: 소스 체크아웃
+        uses: actions/checkout@v4
+
+      - name: JDK 17 설치
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '17'
+
+      - name: Android SDK 설치
+        uses: android-actions/setup-android@v3
+
+      - name: 디버그 APK 빌드
+        run: |
+          chmod +x ./gradlew
+          ./gradlew assembleDebug --no-daemon
+
+      - name: APK 업로드(Artifacts)
+        uses: actions/upload-artifact@v4
+        with:
+          name: 입금알림전달-apk
+          path: app/build/outputs/apk/debug/app-debug.apk
+          if-no-files-found: error
